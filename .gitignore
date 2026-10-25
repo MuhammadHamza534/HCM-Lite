@@ -1,0 +1,23 @@
+# Environment files: commit only the safe template.
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output.
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Prisma/local database artifacts and container volumes.
+prisma/dev.db
+postgres-data/
+*.sql.bak
+
+# Logs and editor/OS files.
+*.log
+npm-debug.log*
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,40 @@
+{
+  "name": "@hcm-lite/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src tests",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "db:generate": "node src/scripts/run-prisma.mjs generate",
+    "db:status": "node src/scripts/run-prisma.mjs migrate status",
+    "db:migrate": "node src/scripts/run-prisma.mjs migrate deploy",
+    "db:smoke": "tsx src/scripts/db-smoke.ts",
+    "db:verify-foundation": "tsx src/scripts/verify-foundation-db.ts",
+    "verify-e2e": "tsx src/scripts/verify-e2e-workflow.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.9.4",
+    "pino-http": "^10.5.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.15.33",
+    "prisma": "^6.17.1",
+    "supertest": "^7.1.1",
+    "tsx": "^4.20.5",
+    "vitest": "^3.2.4"
+  }
+}

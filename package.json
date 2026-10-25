@@ -1,0 +1,43 @@
+{
+  "name": "hcm-lite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Saylani Hackathon HCM Lite — Phase 1 foundation",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w @hcm-lite/api\" \"npm run dev -w @hcm-lite/web\"",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/pdfkit": "^0.17.7",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "tldts": "^6.1.86",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "prisma@6.19.3": true,
+    "esbuild": true
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "pdfkit": "^0.20.2"
+  }
+}
